@@ -8,15 +8,15 @@ When a mismatch is detected, the application attempts to repair the existing rec
 
 ```mermaid
 flowchart TD
-    A[Gmail support email] --> B[Classify priority and category]
+    A[Gmail support email] --> B["Classify priority<br/>and category"]
     B --> C[Create Notion ticket]
-    C --> D[Read back and verify ticket]
+    C --> D["Read back and<br/>verify ticket"]
     D -- Matches --> E[Post Slack notification]
     D -- Mismatch --> F[Repair existing ticket]
     F --> D
-    E --> G[Read back and verify notification]
-    G -- Matches --> H[Final ticket check and saved audit trail]
-    G -- Mismatch --> I[Repair existing notification]
+    E --> G["Read back and<br/>verify notification"]
+    G -- Matches --> H["Final ticket check<br/>and saved audit trail"]
+    G -- Mismatch --> I["Repair existing<br/>notification"]
     I --> G
     F -. Limit reached or API error .-> J[Human review]
     I -. Limit reached or API error .-> J
