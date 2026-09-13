@@ -1,0 +1,29 @@
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+credentials.json
+client_secret_*.json
+*token*.json
+
+# Local state, personal data, and recordings
+data/
+*.db
+*.db-*
+*.sqlite*
+*.log
+*.mp4
+*.webm
+
+# Python and tools
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
