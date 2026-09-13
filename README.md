@@ -160,3 +160,31 @@ A separate live test successfully read an actual Gmail message, created a Notion
 SQLite stores provider IDs, expected fields, timestamps, and verification evidence. A durable creation marker prevents blind retries after an uncertain write. Such cases currently require manual reconciliation; there is no recovery interface. Deleting the database loses duplicate protection, and multiple server processes are not supported.
 
 Verification checks consistency with the saved intake plan at that moment. It does not establish perfect classification, resolution of the customer issue, or future consistency after the final check. API errors and rate limits stop for review rather than automatically retrying.
+
+### Screenshot walkthrough
+
+These screenshots document the live integration results and the local demonstration interface. The history contains both live and simulated runs; its aggregate counts should not be interpreted as live-only test results.
+
+**1. Test email in Gmail.** The sent email describes blocked access to the production dashboard.
+
+![Test support email in Gmail](docs/screenshots/01-gmail-test-email.png)
+
+**2. Tickets in Notion.** The visible properties show High priority, Technical category, and Open status. The title columns are outside this screenshot's horizontal view.
+
+![Notion ticket priority, category, and status](docs/screenshots/02-notion-support-tickets.png)
+
+**3. Real Slack notification.** Support Sentinel posts the email subject, classification, source ID, and link to the corresponding Notion ticket.
+
+![Support Sentinel notification in Slack](docs/screenshots/03-slack-notification.png)
+
+**4. Active inbox watcher.** The dashboard shows automatic test-email monitoring and its last check time. AI triage is off; counters include both live and demo runs.
+
+![Dashboard showing active inbox monitoring](docs/screenshots/04-inbox-watcher-dashboard.png)
+
+**5. Simulated intake form.** This screen shows Demo mode before execution, with the verification panel still in its Ready state. It is not evidence of a completed repair.
+
+![Simulated intake form before execution](docs/screenshots/05-simulated-intake-form.png)
+
+**6. Saved intake history.** Live runs are labeled separately from demo runs. The history shows verified results and a demo run requiring review; detailed read-back evidence is available by opening a run in the application.
+
+![History distinguishing live and simulated outcomes](docs/screenshots/06-live-and-demo-history.png)
