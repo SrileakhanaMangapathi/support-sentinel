@@ -45,7 +45,6 @@ Install Python 3.10 or newer. From the repository folder, run:
 python server.py
 ```
 
-Open **http://127.0.0.1:8765/**. Keep **Demo** selected and leave AI triage unchecked. This mode needs no credentials or third-party Python packages.
 
 ### Configure live integrations
 
